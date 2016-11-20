@@ -1,0 +1,3 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+#テスト用のデータ、ユニークではないので（バリデーションが通ってない）空にしておく
