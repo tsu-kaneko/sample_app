@@ -9,5 +9,10 @@ class ActiveSupport::TestCase
   # order.
   fixtures :all
 
+  # テストユーザーがログインしていればtrueを返す
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
+
   # Add more helper methods to be used by all tests here...
 end
