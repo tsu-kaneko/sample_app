@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       # ユーザーログイン後にユーザー情報のページにリダイレクトする
       log_in user
       remember user
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to user
       #↑ redirect_to user_url(user)と同じ意味
     else
@@ -17,7 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url
   end
   
